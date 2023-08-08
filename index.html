@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anime Recommender</title>
+    <style>
+         html {
+             background-image: url('https://25.media.tumblr.com/ce02d6b6f7f47eb8bce92212dcbb1775/tumblr_mgi2vnM9lO1s0zczqo1_r2_500.gif');
+             background-size:     cover;
+             background-repeat:   no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex justify-center bg-slate-300">
+        <nav class="self-center w-full max-w-7xl">
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex flex-col lg:flex-row justify-around items-center">
+                    <img src="https://www.freeiconspng.com/thumbs/anime-png/anime-png-8.png" width = "40x">
+                    <h1 class="uppercase pl-5 py-4 text-lg font-sans font-bold">
+                        Anime <br />Recommender
+                    </h1>
+                </div>
+                <div class="text-center text-base pr-5  inline-flex">
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        </div>
+        <div class = "main-body">
+            <div class="flex justify-center">
+                <div class="flex flex-col justify-center">
+                    <div class="flex flex-col max-w-7xl justify-center items-center p-2 mt-10">
+                        <div class="flex flex-col w-[90%] md:w-3/4 text-center items-center justify-center space-y-3">
+                            <div class="text-5xl font-bold ">
+                                Get your anime recommendation now!!
+                            </div>
+                            <div class="text-xl font-semibold text-black-400 ">
+                                Get started by writing your favourite anime!!
+                            </div>
+                            <div class="md:text-lg">
+                                <form action="{{ url_for('predict')}}" method="POST">
+                                    <input class="bg-gray-200/70 border drop-shadow-sm shadow-gray-700 rounded-2xl placeholder-slate-400 px-4 py-1 focus:outline-black"
+                                        type="text" name = "name" placeholder="Enter" />
+                                    <button type = "submit" class="p-1 m-2 rounded-2xl text-white bg-blue-500 px-4 font-semibold  hover:bg-blue-900 hover:trandform ease-in-out duration-300">
+                                        Recommend
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <h2 class="uppercase pl-5 py-4 text-lg font-sans font-bold">
+                        {{prediction_text}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
+</body>
+</html>
